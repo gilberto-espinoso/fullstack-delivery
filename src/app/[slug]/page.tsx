@@ -3,6 +3,8 @@ import { notFound } from "next/navigation";
 
 import { getRestaurantBySlug } from "@/data/get-restaurant-by-slug";
 
+import ConsumptionMethodOption from "./components/consumption-method-option";
+
 interface RestaurantPageProps {
   params: Promise<{ slug: string }>;
 }
@@ -38,7 +40,18 @@ const RestaurantPage = async ({ params }: RestaurantPageProps) => {
         </p>
       </div>
 
-      <div className="grid grid-cols-2 pt-14"></div>
+      <div className="grid grid-cols-2 gap-4 pt-14">
+        <ConsumptionMethodOption
+          imageUrl="/dine-in.png"
+          altUrl="Para comer aqui"
+          buttonText="Para comer aqui"
+        />
+        <ConsumptionMethodOption
+          imageUrl="/take-away.png"
+          altUrl="Para levar"
+          buttonText="Para levar"
+        />
+      </div>
     </div>
   );
 };
