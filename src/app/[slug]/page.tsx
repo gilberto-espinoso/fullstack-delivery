@@ -45,11 +45,13 @@ const RestaurantPage = async ({ params }: RestaurantPageProps) => {
           imageUrl="/dine-in.png"
           altUrl="Para comer aqui"
           buttonText="Para comer aqui"
+          option="DINE_IN"
         />
         <ConsumptionMethodOption
           imageUrl="/take-away.png"
           altUrl="Para levar"
           buttonText="Para levar"
+          option="TAKEAWAY"
         />
       </div>
     </div>
