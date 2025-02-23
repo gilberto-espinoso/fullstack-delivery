@@ -48,7 +48,7 @@ const ProductDetails = ({ product }: ProductDetailsProps) => {
         <h2 className="mt-1 text-xl font-semibold">{product.name}</h2>
 
         {/* PREÇO E QUANTIDADE DO PRODUTO */}
-        <div className="flex items-center justify-between">
+        <div className="mt-3 flex items-center justify-between">
           <h3 className="text-xl font-semibold">
             {formatCurrency(product.price)}
           </h3>
