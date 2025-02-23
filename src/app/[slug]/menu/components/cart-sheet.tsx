@@ -27,6 +27,7 @@ const CartSheet = () => {
         {products.map((product) => (
           <div key={product.id}>
             <p>{product.name}</p>
+            <p>Qtd: {product.quantity}</p>
           </div>
         ))}
       </SheetContent>
