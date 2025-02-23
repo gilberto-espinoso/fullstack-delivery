@@ -17,7 +17,13 @@ const ProductPage = async ({ params }: ProductPageProps) => {
       id: productId,
     },
     include: {
-      restaurant: true,
+      restaurant: {
+        select: {
+          name: true,
+          avatarImageUrl: true,
+          slug: true,
+        },
+      },
     },
   });
 
@@ -25,10 +31,14 @@ const ProductPage = async ({ params }: ProductPageProps) => {
     return notFound();
   }
 
+  if (product.restaurant.slug.toUpperCase() !== slug.toUpperCase()) {
+    return notFound();
+  }
+
   return (
-    <div>
+    <div className="flex h-full flex-col">
       <ProductHeader product={product} />
-      <ProductDetails product={product} restaurant={product.restaurant} />
+      <ProductDetails product={product} />
     </div>
   );
 };
